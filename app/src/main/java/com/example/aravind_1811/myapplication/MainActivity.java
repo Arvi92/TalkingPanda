@@ -101,7 +101,6 @@ public class MainActivity extends AppCompatActivity {
 
 
                 String toSpeak = textView.getText().toString();
-                Toast.makeText(getApplicationContext(), toSpeak,Toast.LENGTH_SHORT).show();
                 t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
 
 /*
