@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MyApplication2.iml" filepath="$PROJECT_DIR$/MyApplication2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/google-api-client-1.22.0/google-api-client-1.22.0.iml" filepath="$PROJECT_DIR$/google-api-client-1.22.0/google-api-client-1.22.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/google-api-client-android-1.22.0/google-api-client-android-1.22.0.iml" filepath="$PROJECT_DIR$/google-api-client-android-1.22.0/google-api-client-android-1.22.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/google-http-client-1.22.0/google-http-client-1.22.0.iml" filepath="$PROJECT_DIR$/google-http-client-1.22.0/google-http-client-1.22.0.iml" />
+    </modules>
+  </component>
+</project>
