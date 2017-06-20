@@ -5,10 +5,12 @@ import android.content.Intent;
 
 import android.speech.RecognizerIntent;
 
+import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.view.View;
+
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -25,7 +27,7 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    TextToSpeech t1;
     ImageButton micButton = null;
     private final int REQ_CODE_SPEECH_INPUT = 100;
     TextView textView;
@@ -49,15 +51,22 @@ public class MainActivity extends AppCompatActivity {
 
         micButton = (ImageButton) findViewById(R.id.imageButton);
         textView = (TextView) findViewById(R.id.textView);
-
-
-            micButton.setOnClickListener(new View.OnClickListener() {
+        micButton.setOnClickListener(new View.OnClickListener() {
 
                 @Override
                 public void onClick(View v) {
                     promptSpeechInput();
                 }
             });
+
+        t1=new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if(status != TextToSpeech.ERROR) {
+                    t1.setLanguage(Locale.UK);
+                }
+            }
+        });
 
     }
 
@@ -90,6 +99,10 @@ public class MainActivity extends AppCompatActivity {
                     textView.setText(result.get(0));
                 }
 
+
+                String toSpeak = textView.getText().toString();
+                Toast.makeText(getApplicationContext(), toSpeak,Toast.LENGTH_SHORT).show();
+                t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
 
 /*
                 Translate translate = createTranslateService();
